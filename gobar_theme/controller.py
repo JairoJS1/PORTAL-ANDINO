@@ -1,12 +1,12 @@
-#!coding: utf-8
-import ckan.lib.base as base
+from ckan.controllers.home import HomeController
+from ckan.controllers.api import ApiController
+from ckan.controllers.user import UserController
+import ckan.lib.helpers as h
+from ckan.common import c
 import ckan.logic as logic
 import ckan.model as model
-from ckan.common import c
-from ckan.controllers.home import HomeController
-from pylons import response
-
-import ckanext.gobar_theme.helpers as gobar_helpers
+import ckan.lib.base as base
+import json
 
 
 class GobArHomeController(HomeController):
@@ -32,9 +32,7 @@ class GobArHomeController(HomeController):
             'for_view': True
         }
         data_dict = {
-            'q': '',
-            'fq': 'home_featured:true',
-            'rows': 500
+            'q': ''
         }
         search = logic.get_action('package_search')(context, data_dict)
         if 'results' in search:
@@ -49,42 +47,41 @@ class GobArHomeController(HomeController):
             return segmented_packages
         return []
 
-    def _packages_with_resource_type_equal_to_api(self):
-        context = {
-            'model': model,
-            'session': model.Session,
-            'user': c.user or c.author
-        }
-        data_dict = {
-            'query': 'resource_type:api',
-            'limit': None,
-            'offset': 0,
-        }
-        return logic.get_action('resource_search')(context, data_dict).get('results', [])
-
     def index(self):
         c.groups = self._list_groups()
-        c.sorted_groups = sorted(c.groups, key=lambda x: x['display_name'].lower())
         c.featured_packages = self._featured_packages()
         return super(GobArHomeController, self).index()
 
     def about(self):
         return base.render('about.html')
 
-    def about_ckan(self):
-        return base.render('about_ckan.html')
 
-    def view_about_section(self, title_or_slug):
-        sections = gobar_helpers.get_theme_config('about.sections', [])
+class GobArApiController(ApiController):
 
-        for section in sections:
-            if section.get('slug', '') == title_or_slug or section['title'] == title_or_slug:
-                # la variable `section` contiene la sección buscada
-                return base.render('section_view.html', extra_vars={'section': section})
+    def _remove_extra_id_field(self, json_string):
+        json_dict = json.loads(json_string)
+        has_extra_id = False
+        if 'result' in json_dict and 'fields' in json_dict['result']:
+            for field in json_dict['result']['fields']:
+                if 'id' in field and field['id'] == '_id':
+                    has_extra_id = True
+                    json_dict['result']['fields'].remove(field)
+            if has_extra_id and 'records' in json_dict['result']:
+                for record in json_dict['result']['records']:
+                    if '_id' in record:
+                        del record['_id']
+        return json.dumps(json_dict)
 
-        return base.abort(404, u'Sección no encontrada')
+    def action(self, logic_function, ver=None):
+        default_response = super(GobArApiController, self).action(logic_function, ver)
+        if logic_function == 'datastore_search':
+            default_response = self._remove_extra_id_field(default_response)
+        return default_response
 
 
-    def super_theme_taxonomy(self):
-        response.content_type = 'application/json; charset=UTF-8'
-        return base.render('home/super_theme_taxonomy.html')
+class GobArUserController(UserController):
+
+    def read(self, id=None):
+        if id and id == c.user:
+            return super(GobArUserController, self).read(id)
+        return h.redirect_to('home')

@@ -101,19 +101,6 @@ class GobArConfigController(base.BaseController):
                 return h.json.dumps({'success': True}, for_json=True)
         return base.render('config/config_03_groups.html')
 
-    def edit_header(self):
-        self._authorize()
-        if request.method == 'POST':
-            params = parse_params(request.params)
-            config_dict = self._read_config()
-            if params['image-logic'] == 'new-image':
-                config_dict['header'] = {'image': self._save_img(params['background-image'])}
-            elif params['image-logic'] == 'delete-image':
-                config_dict['header'] = {'image': None}
-            else:
-                config_dict['header'] = {'image': self.get_theme_config('header.image')}
-            self._set_config(config_dict)
-        return base.render('config/config_04_header.html')
 
     def edit_social(self):
         self._authorize()
@@ -168,18 +155,7 @@ class GobArConfigController(base.BaseController):
             self._set_config(config_dict)
         return base.render('config/config_07_dataset.html')
 
-    def edit_organizations(self):
-        self._authorize()
-        if request.method == 'POST':
-            params = parse_params(request.POST)
-            config_dict = self._read_config()
-            config_dict['organization'] = {
-                'description': params['organization-description'].strip(),
-                'show-organizations': 'show-organizations' in params
-            }
-            self._set_config(config_dict)
-        return base.render('config/config_08_organizations.html')
-
+    
     def edit_about(self):
         self._authorize()
         if request.method == 'POST':
@@ -268,18 +244,6 @@ class GobArConfigController(base.BaseController):
             datajson_actions.enqueue_update_datajson_cache_tasks()
             cache_actions.clear_web_cache()
         return base.render(template_name='config/config_12_metadata_portal.html')
-
-    def edit_apis(self):
-        self._authorize()
-        if request.method == 'POST':
-            params = parse_params(request.POST)
-            config_dict = self._read_config()
-            config_dict['apis'] = {
-                'description': params['apis-description'].strip(),
-                'show-apis': 'show-apis' in params
-            }
-            self._set_config(config_dict)
-        return base.render('config/config_13_apis.html')
 
     def edit_series(self):
         from ckanext.gobar_theme.helpers import get_default_series_api_url

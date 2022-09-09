@@ -5656,12 +5656,12 @@ body {
   color: #767676; }
 
 a {
-  color: #0695d6;
+  color: #1D73A5;
   text-decoration: none !important; }
 
 a:hover {
   text-decoration: none !important;
-  color: #17b2f8; }
+  color: #4aa8df; }
 
 div.no-padding {
   padding: 0; }
@@ -6304,7 +6304,7 @@ div.svg-tooltip {
       background-color: #fff;
       border: none;
       border-radius: 2px !important;
-      color: #0695d6;
+      color: #1D73A5;
       margin: 0 2px;
       padding: 6px 11px; }
       .pagination ul li a:hover, .pagination ul li a:focus {
@@ -6346,7 +6346,7 @@ div.svg-tooltip {
         #header #header-spacing .header-links {
           display: block; } }
       #header #header-spacing .header-links .user-divisor {
-        border-left: solid 2px #0695d6;
+        border-left: solid 2px #1D73A5;
         padding: 14px 0.3em 14px 0;
         display: inline-block;
         height: 60%;
@@ -6356,7 +6356,7 @@ div.svg-tooltip {
       #header #header-spacing .header-links .header-link:hover + .header-link .user-divisor {
         border-color: transparent; }
       #header #header-spacing .header-links .header-link {
-        color: #0695d6;
+        color: #1D73A5;
         margin: 0;
         padding: 0 0.3em;
         font-size: 85%;
@@ -6367,7 +6367,7 @@ div.svg-tooltip {
         vertical-align: bottom; }
         @media (min-width: 768px) {
           #header #header-spacing .header-links .header-link:hover, #header #header-spacing .header-links .header-link.active {
-            background: #0695d6;
+            background: #1D73A5;
             color: white; }
             #header #header-spacing .header-links .header-link:hover .user-logo path, #header #header-spacing .header-links .header-link.active .user-logo path {
               fill: white !important; } }
@@ -6391,7 +6391,7 @@ div.svg-tooltip {
           position: absolute;
           right: 0;
           width: 250px;
-          background-color: #0695d6;
+          background-color: #1D73A5;
           color: white;
           list-style-type: none;
           text-align: left;
@@ -6406,7 +6406,7 @@ div.svg-tooltip {
             padding: 7px 14px;
             color: white; }
             #header #header-spacing .header-links .header-link.dropdown ul a li:hover {
-              background: #17b2f8; }
+              background: #4aa8df; }
         #header #header-spacing .header-links .header-link.dropdown.active ul {
           display: block; }
     #header #header-spacing .logo-header.showing-nav {
@@ -6435,10 +6435,10 @@ div.svg-tooltip {
       -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
       border-radius: 4px;
-      color: #0695d6; }
+      color: #1D73A5; }
       #header #header-spacing .logo-header .icon-reorder:hover, #header #header-spacing .logo-header .icon-reorder.active {
         color: white;
-        background: #0695d6; }
+        background: #1D73A5; }
       @media (min-width: 768px) {
         #header #header-spacing .logo-header .icon-reorder {
           display: none; } }
@@ -6450,9 +6450,9 @@ div.svg-tooltip {
       #header #header-spacing .logo-header .xs-navbar .navbar-link {
         line-height: initial;
         padding: 10px;
-        color: #0695d6; }
+        color: #1D73A5; }
         #header #header-spacing .logo-header .xs-navbar .navbar-link:hover {
-          background: #0695d6;
+          background: #1D73A5;
           color: white;
           cursor: pointer; }
           #header #header-spacing .logo-header .xs-navbar .navbar-link:hover a {
@@ -6502,7 +6502,7 @@ div.svg-tooltip {
       #footer #footer-spacer {
         padding: 50px 0; } }
     #footer #footer-spacer .footer-section {
-      color: #0695d6;
+      color: #1D73A5;
       font-size: 16px;
       font-weight: 500;
       text-align: center; }
@@ -6535,19 +6535,19 @@ div.svg-tooltip {
           display: inline-block;
           font-size: 28px; }
         #footer #footer-spacer .footer-section.logo a.social-link:hover {
-          background: #0695d6;
+          background: #1D73A5;
           color: white; }
       #footer #footer-spacer .footer-section.links-internos a:hover {
-        color: #17b2f8; }
+        color: #4aa8df; }
       #footer #footer-spacer .footer-section.links-externos {
         text-align: right; }
         #footer #footer-spacer .footer-section.links-externos .ckan-link {
           color: #767676;
           text-align: right; }
         #footer #footer-spacer .footer-section.links-externos .ckan-name {
-          color: #0695d6; }
+          color: #1D73A5; }
           #footer #footer-spacer .footer-section.links-externos .ckan-name:hover {
-            color: #17b2f8; }
+            color: #4aa8df; }
       @media (min-width: 768px) {
         #footer #footer-spacer .footer-section {
           text-align: left; } }
@@ -6808,7 +6808,7 @@ div#background-container {
         #error #error-text #error-code .circle-container .circle-gutter .circle-background {
           width: 100%;
           height: 100%;
-          background: #0695d6;
+          background: #1D73A5;
           -o-border-radius: 15%;
           -moz-border-radius: 15%;
           -webkit-border-radius: 15%;
@@ -6865,7 +6865,7 @@ div#background-container {
       width: 200px;
       margin-bottom: 30px; }
     #expired-key #expired-key-content .expired-key-title {
-      color: #17b2f8;
+      color: #4aa8df;
       font-size: 30px; }
     #expired-key #expired-key-content .expired-key-desc {
       font-size: 20px;
@@ -6905,7 +6905,7 @@ div#background-container {
     .modal .modal-body h1 {
       margin: 0 0 10px 0;
       text-align: center;
-      color: #0695d6;
+      color: #1D73A5;
       font-weight: 400; }
     .modal .modal-body p {
       font-size: 18px;
@@ -6941,7 +6941,7 @@ div#background-container {
         padding-top: 30px;
         padding-bottom: 50px; } }
     .gobar-static-container .gobar-static h2 {
-      color: #0695d6;
+      color: #1D73A5;
       font-weight: 400;
       font-size: 50px;
       margin-top: 40px; }
@@ -6965,9 +6965,9 @@ div#background-container {
     background: #767676;
     color: white; }
   .btn.btn-blue {
-    background: #0695d6; }
+    background: #1D73A5; }
     .btn.btn-blue:hover, .btn.btn-blue:active, .btn.btn-blue:focus {
-      background: #17b2f8;
+      background: #4aa8df;
       color: white; }
     .btn.btn-blue[disabled] {
       opacity: 1;
@@ -6982,11 +6982,11 @@ div#background-container {
       background: #4ecd7a; }
   .btn.btn-transparent {
     background: transparent;
-    color: #0695d6;
+    color: #1D73A5;
     border: none;
     box-shadow: none; }
     .btn.btn-transparent:hover {
-      color: #17b2f8; }
+      color: #4aa8df; }
 
 #title {
   color: white;
@@ -6998,7 +6998,7 @@ div#background-container {
   background-image: linear-gradient(to right,#00b9f1, #0072bc);
   background-size: cover;
   background-position: center center;
-  background-image: url("/img/home_bg.png");
+  background-image: url("/img/BANDERA.png"); 
   padding: 0; }
   #title .background-overlay {
     padding: 20px 0;
@@ -7069,7 +7069,7 @@ div#background-container {
         color: #999999;
         font-weight: 300; }
     #title #searcher form button {
-      background: #0695d6;
+      background: #1D73A5;
       border: none;
       position: absolute;
       top: 0;
@@ -7079,7 +7079,7 @@ div#background-container {
       border-bottom-right-radius: 3px;
       padding: 2px 8px; }
       #title #searcher form button:hover {
-        background: #17b2f8; }
+        background: #4aa8df; }
       #title #searcher form button .search-icon {
         width: auto;
         height: 100%;
@@ -7133,7 +7133,7 @@ div#background-container {
     .featured-groups {
       padding: 50px 0; } }
   .featured-groups a:hover {
-    color: #0695d6; }
+    color: #1D73A5; }
   .featured-groups .group-container {
     margin-bottom: 20px;
     padding: 0 10px;
@@ -7191,7 +7191,7 @@ div#background-container {
           left: 10px;
           margin-top: -17.5px; }
           .featured-groups .group-container .group .group-text svg circle, .featured-groups .group-container .group .group-text svg path, .featured-groups .group-container .group .group-text img path {
-            fill: #0695d6; }
+            fill: #1D73A5; }
         .featured-groups .group-container .group .group-text .group-table {
           width: 100%;
           overflow: hidden;
@@ -7211,7 +7211,7 @@ div#background-container {
         .featured-groups .group-container .group.inactive .group-text svg path {
           fill: #cccccc !important; }
       .featured-groups .group-container .group.active:hover {
-        background: #0695d6;
+        background: #1D73A5;
         color: white; }
         .featured-groups .group-container .group.active:hover svg path, .featured-groups .group-container .group.active:hover svg circle, .featured-groups .group-container .group.active:hover svg polygon {
           fill: white !important; }
@@ -7266,9 +7266,9 @@ div#background-container {
     -moz-border-radius: 4px;
     -webkit-border-radius: 4px;
     border-radius: 4px;
-    background-color: #0695d6; }
+    background-color: #1D73A5; }
     #home-create-buttons a:hover {
-      background-color: #17b2f8; }
+      background-color: #4aa8df; }
 
 #featured-content-container {
   background-color: #f5f5f5;
@@ -7332,7 +7332,7 @@ div#background-container {
           line-height: 1.3;
           font-size: 16px; }
         #featured-content-container #featured-content .table-wrapper a:hover {
-          background: #0695d6; }
+          background: #1D73A5; }
           #featured-content-container #featured-content .table-wrapper a:hover .featured-card h1,
           #featured-content-container #featured-content .table-wrapper a:hover .featured-card p {
             color: white; }
@@ -7419,7 +7419,7 @@ div#background-container {
       #password-reset.modal .modal-content .modal-body h1 {
         text-align: left; }
       #password-reset.modal .modal-content .modal-body h2 {
-        color: #0695d6;
+        color: #1D73A5;
         font-size: 20px;
         font-weight: 400;
         margin-bottom: 20px; }
@@ -7607,7 +7607,7 @@ div#background-container {
         border: none;
         text-align: center; }
       #login-container #login form button {
-        background: #0695d6;
+        background: #1D73A5;
         color: white;
         border: none;
         border-radius: 0;
@@ -7617,7 +7617,7 @@ div#background-container {
         padding: 6px 20px;
         display: inline-block; }
       #login-container #login form button:hover {
-        background-color: #17b2f8; }
+        background-color: #4aa8df; }
 
 #recover-password.modal {
   width: 600px;
@@ -7680,10 +7680,10 @@ div#background-container {
         -webkit-box-shadow: 0 -2px 4px 0 rgba(150, 150, 150, 0.5);
         box-shadow: 0 -2px 4px 0 rgba(150, 150, 150, 0.5); } }
     #user-datasets-container #user-datasets .back-btn {
-      color: #0695d6;
+      color: #1D73A5;
       margin: 20px 0; }
     #user-datasets-container #user-datasets h1 {
-      color: #0695d6;
+      color: #1D73A5;
       font-size: 40px;
       font-weight: 400;
       margin: 0 0 30px 0; }
@@ -7706,7 +7706,7 @@ div#background-container {
     #template-config-container #template-config #user-config-my-account .disabled-input svg path {
       fill: #999999; }
     #template-config-container #template-config #user-config-my-account .disabled-input svg:hover path {
-      fill: #0695d6; }
+      fill: #1D73A5; }
   #template-config-container #template-config #user-config-my-account button {
     margin-bottom: 30px;
     height: 42px; }
@@ -7785,7 +7785,7 @@ div#background-container {
         cursor: pointer;
         min-height: 45px; }
         #template-config-container #template-config #user-config-create-users .user-list .user .user-editable:hover .edit-svg path {
-          fill: #0695d6; }
+          fill: #1D73A5; }
       #template-config-container #template-config #user-config-create-users .user-list .user .user-logo {
         position: absolute;
         top: 6px;
@@ -7937,9 +7937,9 @@ div#background-container {
         -moz-border-radius: 4px;
         -webkit-border-radius: 4px;
         border-radius: 4px;
-        background-color: #0695d6; }
+        background-color: #1D73A5; }
         .organization-container .organization .add-organization a:hover {
-          background-color: #17b2f8; }
+          background-color: #4aa8df; }
     .organization-container .organization .organization-list {
       padding: 0;
       margin: 0;
@@ -8142,7 +8142,7 @@ div#background-container {
     #edit-organization-container #edit-organization .back-btn, #edit-organization-container #new-organization .back-btn, #new-organization-container #edit-organization .back-btn, #new-organization-container #new-organization .back-btn {
       padding: 20px 0; }
     #edit-organization-container #edit-organization h1, #edit-organization-container #new-organization h1, #new-organization-container #edit-organization h1, #new-organization-container #new-organization h1 {
-      color: #0695d6;
+      color: #1D73A5;
       font-weight: 400;
       font-size: 40px;
       margin: 0 0 20px 0; }
@@ -8183,7 +8183,7 @@ div#background-container {
           background: none;
           display: inline;
           padding: 0;
-          color: #0695d6;
+          color: #1D73A5;
           border: none;
           box-shadow: none; }
       #edit-organization-container #edit-organization form .add-on, #edit-organization-container #new-organization form .add-on, #new-organization-container #edit-organization form .add-on, #new-organization-container #new-organization form .add-on {
@@ -8270,10 +8270,10 @@ div#background-container {
       -moz-border-radius: 4px;
       -webkit-border-radius: 4px;
       border-radius: 4px;
-      background-color: #0695d6;
+      background-color: #1D73A5;
       margin-left: 10px; }
       #search-results .add-dataset a:hover {
-        background-color: #17b2f8; }
+        background-color: #4aa8df; }
   #search-results .search-and-order {
     padding: 0;
     border: none;
@@ -8337,7 +8337,7 @@ div#background-container {
         #search-results .search-and-order .searcher .menu-button:hover {
           cursor: pointer; }
           #search-results .search-and-order .searcher .menu-button:hover svg path {
-            fill: #0695d6; }
+            fill: #1D73A5; }
     #search-results .search-and-order .order {
       text-align: right;
       padding-right: 0; }
@@ -8464,7 +8464,7 @@ div#background-container {
           transition-duration: 150ms; }
           .filters-container .search-filter ul a li:hover {
             background: #e5e5e5;
-            color: #17b2f8; }
+            color: #4aa8df; }
           .filters-container .search-filter ul a li .close-filter {
             display: none; }
           .filters-container .search-filter ul a li.active {
@@ -8499,11 +8499,11 @@ div#background-container {
             .filters-container .search-filter .group-images .group-image-container.available svg circle, .filters-container .search-filter .group-images .group-image-container.available svg path {
           fill: #767676; }
           .filters-container .search-filter .group-images .group-image-container.available:hover svg circle, .filters-container .search-filter .group-images .group-image-container.available:hover svg path {
-          fill: #0695d6; }
+          fill: #1D73A5; }
         .filters-container .search-filter .group-images .group-image-container.active svg path {
-          fill: #0695d6; }
+          fill: #1D73A5; }
         .filters-container .search-filter .group-images .group-image-container.active:hover svg path {
-          fill: #17b2f8; }
+          fill: #4aa8df; }
         .filters-container .search-filter .group-images .group-image-container .svg-tooltip {
           position: absolute;
           display: inline-block;
@@ -8591,7 +8591,7 @@ div#background-container {
         width: 3.5em;
         font-weight: 500;
         margin: 0 0 5px 5px;
-        background-color: #0695d6;
+        background-color: #1D73A5;
         overflow: hidden;
         text-overflow: ellipsis; }
         .dataset-list .dataset-item .dataset-container .dataset-border .dataset-groups-and-resources .dataset-resources .label[data-format=html], .dataset-list .dataset-item .dataset-container .dataset-border .dataset-groups-and-resources .dataset-resources .label[data-format*=html] {
@@ -8632,9 +8632,9 @@ div#background-container {
 .dataset-list .dataset-item:hover {
   color: inherit; }
   .dataset-list .dataset-item:hover .dataset-border {
-    border-right-color: #0695d6; }
+    border-right-color: #1D73A5; }
     .dataset-list .dataset-item:hover .dataset-border .dataset-content .dataset-title {
-      color: #0695d6; }
+      color: #1D73A5; }
 
 #title.package-title .background-overlay {
   padding-bottom: 40px; }
@@ -8687,7 +8687,7 @@ div#background-container {
   margin-top: 20px; }
 #pkg-main-info #pkg-title-and-desc h1.pkg-title {
   margin: 20px 0 0 0;
-  color: #0695d6;
+  color: #1D73A5;
   font-size: 25px; }
 #pkg-main-info #pkg-title-and-desc .edit-button {
   float: right;
@@ -8702,7 +8702,7 @@ div#background-container {
     #pkg-main-info #pkg-title-and-desc p.pkg-author svg path {
       fill: #767676; }
     #pkg-main-info #pkg-title-and-desc p.pkg-author svg:hover path {
-      fill: #0695d6; }
+      fill: #1D73A5; }
 #pkg-main-info #pkg-title-and-desc p.pkg-notes {
   margin-bottom: 50px;
   font-size: 16px;
@@ -8725,7 +8725,7 @@ div#background-container {
 #pkg-secondary-info {
   background: #fafafa; }
   #pkg-secondary-info h2.secondary-info-title {
-    color: #0695d6;
+    color: #1D73A5;
     margin-top: 58px;
     font-size: 20px;
     border-bottom: solid 1px #999999;
@@ -8767,7 +8767,7 @@ div#background-container {
           #pkg-secondary-info #info-container .row .value p.pkg-maintainer svg path {
             fill: #999999; }
           #pkg-secondary-info #info-container .row .value p.pkg-maintainer svg:hover path {
-            fill: #0695d6; }
+            fill: #1D73A5; }
         #pkg-secondary-info #info-container .row .value .group-img-container {
           display: inline-block;
           position: relative;
@@ -8777,7 +8777,7 @@ div#background-container {
             height: 30px;
             margin: 0 0 5px 5px; }
             #pkg-secondary-info #info-container .row .value .group-img-container svg.group-image:hover path, #pkg-secondary-info #info-container .row .value .group-img-container img.group-image:hover path {
-              fill: #0695d6; }
+              fill: #1D73A5; }
           #pkg-secondary-info #info-container .row .value .group-img-container .svg-tooltip {
             position: absolute;
             display: inline-block;
@@ -8814,20 +8814,20 @@ div#background-container {
             white-space: normal;
             color: #767676; }
             #pkg-secondary-info #info-container .row .value p.pkg-tag a:hover {
-              color: #0695d6; }
+              color: #1D73A5; }
         #pkg-secondary-info #info-container .row .value p.show-more-tags,
         #pkg-secondary-info #info-container .row .value p.show-fewer-tags {
           cursor: pointer;
-          color: #0695d6; }
+          color: #1D73A5; }
           #pkg-secondary-info #info-container .row .value p.show-more-tags:hover,
           #pkg-secondary-info #info-container .row .value p.show-fewer-tags:hover {
-            color: #17b2f8; }
+            color: #4aa8df; }
 
 #pkg-recent-activity {
   background: #fafafa;
   color: #767676; }
   #pkg-recent-activity h2.recent-activity-title {
-    color: #0695d6;
+    color: #1D73A5;
     font-weight: 400;
     margin: 50px 0 0 0;
     font-size: 20px;
@@ -8912,7 +8912,7 @@ div#background-container {
     #edit-resources-container #edit-resources .back-btn {
       margin: 20px 0; }
     #edit-resources-container #edit-resources h1 {
-      color: #0695d6;
+      color: #1D73A5;
       margin: 20px 0; }
     #edit-resources-container #edit-resources .form-like {
       padding: 50px;
@@ -8945,9 +8945,9 @@ div#background-container {
         padding: 12px;
         float: none !important; }
         #edit-resources-container #edit-resources .form-actions .btn.save {
-          background: #0695d6; }
+          background: #1D73A5; }
           #edit-resources-container #edit-resources .form-actions .btn.save:hover {
-            background: #17b2f8;
+            background: #4aa8df;
             color: white; }
       #edit-resources-container #edit-resources .form-actions .saving {
         display: none !important; }
@@ -8959,9 +8959,9 @@ div#background-container {
       #edit-resources-container #edit-resources .action-buttons .btn {
         padding: 12px;
         text-transform: uppercase;
-        background: #0695d6; }
+        background: #1D73A5; }
         #edit-resources-container #edit-resources .action-buttons .btn:hover {
-          background: #17b2f8;
+          background: #4aa8df;
           color: white; }
         #edit-resources-container #edit-resources .action-buttons .btn i {
           display: none; }
@@ -9072,7 +9072,7 @@ div#background-container {
     #edit-package-container #edit-package .back-btn, #edit-package-container #new-package .back-btn, #new-package-container #edit-package .back-btn, #new-package-container #new-package .back-btn {
       margin: 20px 0; }
     #edit-package-container #edit-package h1, #edit-package-container #new-package h1, #new-package-container #edit-package h1, #new-package-container #new-package h1 {
-      color: #0695d6;
+      color: #1D73A5;
       margin: 20px 0; }
     #edit-package-container #edit-package form, #edit-package-container #new-package form, #new-package-container #edit-package form, #new-package-container #new-package form {
       padding: 50px;
@@ -9088,7 +9088,7 @@ div#background-container {
           #edit-package-container #edit-package form .resource-nav a div, #edit-package-container #edit-package form .resource-nav a:hover div, #edit-package-container #new-package form .resource-nav a div, #edit-package-container #new-package form .resource-nav a:hover div, #new-package-container #edit-package form .resource-nav a div, #new-package-container #edit-package form .resource-nav a:hover div, #new-package-container #new-package form .resource-nav a div, #new-package-container #new-package form .resource-nav a:hover div {
             padding: 10px 0; }
             #edit-package-container #edit-package form .resource-nav a div.active, #edit-package-container #edit-package form .resource-nav a:hover div.active, #edit-package-container #new-package form .resource-nav a div.active, #edit-package-container #new-package form .resource-nav a:hover div.active, #new-package-container #edit-package form .resource-nav a div.active, #new-package-container #edit-package form .resource-nav a:hover div.active, #new-package-container #new-package form .resource-nav a div.active, #new-package-container #new-package form .resource-nav a:hover div.active {
-              background: #0695d6; }
+              background: #1D73A5; }
       #edit-package-container #edit-package form .control-group, #edit-package-container #new-package form .control-group, #new-package-container #edit-package form .control-group, #new-package-container #new-package form .control-group {
         margin: 0 0 30px 0; }
 
@@ -9144,7 +9144,7 @@ div#background-container {
             background: none;
             display: inline;
             padding: 0;
-            color: #0695d6;
+            color: #1D73A5;
             border: none;
             box-shadow: none; }
         #edit-package-container #edit-package form .control-group .add-on, #edit-package-container #new-package form .control-group .add-on, #new-package-container #edit-package form .control-group .add-on, #new-package-container #new-package form .control-group .add-on {
@@ -9202,7 +9202,7 @@ div#background-container {
             line-height: 23px; }
           #edit-package-container #edit-package form ol.stages li.active .highlight, #edit-package-container #new-package form ol.stages li.active .highlight, #new-package-container #edit-package form ol.stages li.active .highlight, #new-package-container #new-package form ol.stages li.active .highlight {
             color: white;
-            background: #0695d6; }
+            background: #1D73A5; }
           #edit-package-container #edit-package form ol.stages li.complete .highlight, #edit-package-container #new-package form ol.stages li.complete .highlight, #new-package-container #edit-package form ol.stages li.complete .highlight, #new-package-container #new-package form ol.stages li.complete .highlight {
             color: white;
             background: #cccccc; }
@@ -9268,7 +9268,7 @@ div#background-container {
       background-color: #e6f5fc;
       padding: 20px 0;
       cursor: pointer;
-      color: #0695d6; }
+      color: #1D73A5; }
     #resource-edit #resource-attributes-form .resource-attributes-group .resource-attributes-input-container {
       padding: 0 15px 15px 0; }
       #resource-edit #resource-attributes-form .resource-attributes-group .resource-attributes-input-container.resource-col-special-data-container {
@@ -9280,7 +9280,7 @@ div#background-container {
         color: black;}
       #resource-edit #resource-attributes-form .resource-attributes-group .resource-attributes-input-container .blue {
         font-size: 15px;
-        color: #0695d6;}
+        color: #1D73A5;}
       #resource-edit #resource-attributes-form .resource-attributes-group .resource-attributes-input-container select {
         height: 40px;
         margin-bottom: 20px; }
@@ -9301,7 +9301,7 @@ div#background-container {
   #resource-edit #resource-attributes-form #delete-col-modal .btn-danger {
     background-color: #f53a20; }
 #resource-edit h2.blue {
-  color: #0695d6;
+  color: #1D73A5;
   margin: 0 0 10px 0; }
 
 #edit-package #delete-modal .modal-content {
@@ -9356,7 +9356,7 @@ div#background-container {
       padding-left: 0;
       margin-bottom: 15px; }
       .resource-container .resource .title h1 {
-        color: #0695d6;
+        color: #1D73A5;
         margin: 20px 0 0 0;
         font-size: 26px;
         overfloe: hidden;
@@ -9364,7 +9364,7 @@ div#background-container {
       .resource-container .resource .title p {
         font-size: 18px; }
       .resource-container .resource .title button {
-        background: #0695d6;
+        background: #1D73A5;
         border: none;
         -o-border-radius: 4px;
         -moz-border-radius: 4px;
@@ -9378,7 +9378,7 @@ div#background-container {
         right: 0;
         margin-top: -15px; }
         .resource-container .resource .title button:hover {
-          background: #17b2f8; }
+          background: #4aa8df; }
     .resource-container .resource .resource-alternative-packages {
       padding-left: 0;
       padding-right: 0;
@@ -9396,7 +9396,7 @@ div#background-container {
     .resource-container .resource .resource-attributes {
       margin-top: 20px; }
       .resource-container .resource .resource-attributes h2 {
-        color: #0695d6;
+        color: #1D73A5;
         margin: 0 0 20px 0; }
       .resource-container .resource .resource-attributes table {
         table-layout: fixed;
@@ -9405,7 +9405,7 @@ div#background-container {
         .resource-container .resource .resource-attributes table colgroup .col-attribute {
           width: 120px; }
         .resource-container .resource .resource-attributes table thead tr {
-          background: #0695d6;
+          background: #1D73A5;
           color: white; }
           .resource-container .resource .resource-attributes table thead tr th {
             font-weight: 500;
@@ -9421,7 +9421,7 @@ div#background-container {
             border-bottom: 1px solid #cccccc;
             border-top: 1px solid #cccccc; }
             .resource-container .resource .resource-attributes table tbody tr:last-child {
-              border-bottom: solid 5px #0695d6; }
+              border-bottom: solid 5px #1D73A5; }
             .resource-container .resource .resource-attributes table tbody tr td {
               padding: 10px;
               text-align: left;
@@ -9442,7 +9442,7 @@ div#background-container {
         font-size: 19px;
         font-weight: 400;
         border-bottom: solid 1px #999999;
-        color: #0695d6;
+        color: #1D73A5;
         margin-bottom: 0; }
       .resource-container .resource .resource-additional-info .resource-additional {
         padding: 15px 5px;
@@ -9457,7 +9457,7 @@ div#background-container {
           padding: 0; }
           .resource-container .resource .resource-additional-info .resource-additional .value span.label {
             font-size: 14px;
-            background-color: #0695d6; }
+            background-color: #1D73A5; }
             .resource-container .resource .resource-additional-info .resource-additional .value span.label[data-format=html], .resource-container .resource .resource-additional-info .resource-additional .value span.label[data-format*=html] {
               background-color: #8E24AA; }
             .resource-container .resource .resource-additional-info .resource-additional .value span.label[data-format=json], .resource-container .resource .resource-additional-info .resource-additional .value span.label[data-format*=json] {
@@ -9500,7 +9500,7 @@ div#background-container {
     left: 0;
     margin-top: -28.35px; }
     .pkg-container .pkg-file-img svg path {
-      fill: #0695d6; }
+      fill: #1D73A5; }
     .pkg-container .pkg-file-img[data-format=html] svg path, .pkg-container .pkg-file-img[data-format*=html] svg path {
       fill: #8E24AA; }
     .pkg-container .pkg-file-img[data-format=json] svg path, .pkg-container .pkg-file-img[data-format*=json] svg path {
@@ -9551,7 +9551,7 @@ div#background-container {
     margin: 0 10px 0 10px;
     margin-top: -26px; }
     .pkg-container .pkg-actions button {
-      background: #0695d6;
+      background: #1D73A5;
       color: white;
       border: none;
       border-radius: 4px;
@@ -9562,7 +9562,7 @@ div#background-container {
       font-weight: 300;
       padding: 3px 6px; }
       .pkg-container .pkg-actions button:hover {
-        background-color: #17b2f8; }
+        background-color: #4aa8df; }
   .pkg-container:after {
     content: "";
     display: table;
@@ -9583,7 +9583,7 @@ div#background-container {
       overflow: hidden;
       text-overflow: ellipsis; }
     .pkg-container .package-info:hover h3 {
-      color: #0695d6; }
+      color: #1D73A5; }
 
 #edit-group-container, #new-group-container {
   padding-right: 0;
@@ -9689,7 +9689,7 @@ div#background-container {
     #edit-group-container #edit-group .back-btn, #edit-group-container #new-group .back-btn, #new-group-container #edit-group .back-btn, #new-group-container #new-group .back-btn {
       padding: 20px 0; }
     #edit-group-container #edit-group h1, #edit-group-container #new-group h1, #new-group-container #edit-group h1, #new-group-container #new-group h1 {
-      color: #0695d6;
+      color: #1D73A5;
       font-weight: 400;
       font-size: 40px;
       margin: 0 0 20px 0; }
@@ -9734,7 +9734,7 @@ div#background-container {
           background: none;
           display: inline;
           padding: 0;
-          color: #0695d6;
+          color: #1D73A5;
           border: none;
           box-shadow: none; }
       #edit-group-container #edit-group form .add-on, #edit-group-container #new-group form .add-on, #new-group-container #edit-group form .add-on, #new-group-container #new-group form .add-on {
@@ -9800,9 +9800,9 @@ div#background-container {
       #group-imgs-modal.modal .modal-body .radio-container .radio-box h2 {
         font-size: 22px; }
       #group-imgs-modal.modal .modal-body .radio-container .radio-box.selected, #group-imgs-modal.modal .modal-body .radio-container .radio-box:hover {
-        border-color: #0695d6; }
+        border-color: #1D73A5; }
         #group-imgs-modal.modal .modal-body .radio-container .radio-box.selected .radio-description, #group-imgs-modal.modal .modal-body .radio-container .radio-box:hover .radio-description {
-          background-color: #0695d6;
+          background-color: #1D73A5;
           color: white; }
       #group-imgs-modal.modal .modal-body .radio-container .radio-box.not-selected {
         opacity: 0.75; }
@@ -9874,7 +9874,7 @@ div.about-components > pre{
       margin: 0;
       padding: 0; }
     #template-config-container #template-config h1 {
-      color: #0695d6;
+      color: #1D73A5;
       font-weight: 400;
       margin: 50px 0 10px 0;
       font-size: 40px; }
@@ -9890,7 +9890,7 @@ div.about-components > pre{
       color: #767676; }
       #template-config-container #template-config h2.blue {
         margin-top: 20px;
-        color: #0695d6; }
+        color: #1D73A5; }
     #template-config-container #template-config .with-bottom-margin {
       margin-bottom: 30px; }
     #template-config-container #template-config label.form-error-message {
@@ -9923,9 +9923,9 @@ div.about-components > pre{
         border-radius: 4px;
         border: solid 2px #f5f5f5; }
         #template-config-container #template-config .radio-container .radio-box.selected, #template-config-container #template-config .radio-container .radio-box:hover {
-          border-color: #0695d6; }
+          border-color: #1D73A5; }
           #template-config-container #template-config .radio-container .radio-box.selected .radio-description, #template-config-container #template-config .radio-container .radio-box:hover .radio-description {
-            background-color: #0695d6;
+            background-color: #1D73A5;
             color: white; }
             #template-config-container #template-config .radio-container .radio-box.selected .radio-description h2, #template-config-container #template-config .radio-container .radio-box:hover .radio-description h2 {
               color: white; }
@@ -10036,7 +10036,7 @@ div.about-components > pre{
       padding-bottom: 50px;
       text-align: center; }
       #template-config-container #template-config .submit-container .submit-button {
-        background-color: #0695d6;
+        background-color: #1D73A5;
         color: white;
         border: none;
         float: right;
@@ -10046,7 +10046,7 @@ div.about-components > pre{
         border-radius: 4px;
         padding: 12px; }
         #template-config-container #template-config .submit-container .submit-button:hover {
-          background-color: #17b2f8; }
+          background-color: #4aa8df; }
 
 #template-config #navbar {
   background: #f5f5f5;
@@ -10056,7 +10056,7 @@ div.about-components > pre{
   padding-bottom: 99999px; }
   #template-config #navbar h2 {
     font-size: 18px;
-    color: #0695d6;
+    color: #1D73A5;
     margin: 0 0 10px 0;
     font-weight: 400;
     padding: 0 20px; }
@@ -10070,19 +10070,19 @@ div.about-components > pre{
       #template-config #navbar .links-section a.section-link:hover, #template-config #navbar .links-section a.section-link.active {
         cursor: pointer;
         background: #e5e5e5;
-        color: #0695d6; }
+        color: #1D73A5; }
     #template-config #navbar .links-section.guide-link {
       padding: 60px 20px 10px 20px;
       color: #999999; }
       #template-config #navbar .links-section.guide-link i {
-        color: #0695d6;
+        color: #1D73A5;
         font-size: 18px; }
       #template-config #navbar .links-section.guide-link .blue {
-        color: #0695d6; }
+        color: #1D73A5; }
       #template-config #navbar .links-section.guide-link a {
         color: inherit; }
         #template-config #navbar .links-section.guide-link a:hover i, #template-config #navbar .links-section.guide-link a:hover .blue {
-          color: #17b2f8; }
+          color: #4aa8df; }
 
 #new-group-container #new-group form .control-group .field-image-upload,
 #edit-group-container #edit-group form .control-group .field-image-upload,
@@ -10155,7 +10155,7 @@ div.about-components > pre{
 }
 
 .title-h{
-  color: #0695d6 !important;
+  color: #1D73A5 !important;
   font-size: 32px !important;
   padding-bottom: 20px !important;
   border-bottom: 0 !important;
@@ -10255,8 +10255,8 @@ div#sort-col-modal div.modal-body {
 }
 
 .btn-outline-primary, .btn-outline-primary:hover, .btn-outline-primary:focus {
-     border: 1px solid #0695d6;
-     color: #0695d6;
+     border: 1px solid #1D73A5;
+     color: #1D73A5;
      background: white;
 }
 
@@ -10287,7 +10287,7 @@ div.explanation {
 }
 
 button#add-another-section{
-  color: #0695d6;
+  color: #1D73A5;
   text-align: center;
   width: 100%;
   height: 80px;
@@ -10310,7 +10310,7 @@ div.section-div{
 
 .gobar-static-container button {
     color: white;
-    background-color: #17b2f8;
+    background-color: #4aa8df;
     border: none;
     padding: 10px 18px;
     font-size: 18px;
