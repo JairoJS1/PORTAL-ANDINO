@@ -118,7 +118,7 @@
             <div class="col-xs-12 col-sm-7 no-padding header-links">
                 {%- if c.action != 'login' -%}
                     <a class="header-link" href="{{ h.url_for(controller='package', action='search') }}">Datasets</a>
-                    <a class="header-link" href="{{ h.url_for(controller='ckanext.gobar_theme.user_controller:GobArUserController', action='login') }}">Ingresar</a>
+                    <a class="header-link" href="{{ h.url_for(controller='ckanext.gobar_theme.user_controller:GobArUserController', action='login') }}">Ingresar V2</a>
 
                     {%- if h.get_theme_config('series_tiempo_ar_explorer.enable') and h.is_plugin_present('seriestiempoarexplorer') -%}
                         <a class="header-link" href="{{ h.url_for(controller='ckanext.seriestiempoarexplorer.controller:TSArController', action='series_tiempo') }}">Series</a>
