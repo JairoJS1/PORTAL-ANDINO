@@ -1,0 +1,62 @@
+{% set attributes = h.json_loads(res['attributesDescription'] or '[]') %}
+{% set hasAtLeastOneTitle = h.attributes_has_at_least_one('title', attributes) %}
+{% set hasAtLeastOneType = h.attributes_has_at_least_one('type', attributes) %}
+{% set hasAtLeastOneDescription = h.attributes_has_at_least_one('description', attributes) %}
+{% set hasAtLeastOneUnit = h.attributes_has_at_least_one('unit', attributes) %}
+{% set hasAtLeastOneId = h.attributes_has_at_least_one('id', attributes) %}
+{% set hasAtLeastOneSpecialType = h.attributes_has_at_least_one('specialType', attributes) %}
+{% set hasAtLeastOnespecialTypeDetail = h.attributes_has_at_least_one('specialTypeDetail', attributes) %}
+
+{% if attributes|length > 0 %}
+<h2 class="title-h">Campos de este recurso</h2>
+
+        <table id="metadata-table" class="table table-striped header-fixed" style="display: none;">
+            <thead>
+                <tr class="gradient">
+                    <th class="m-title">Título de la columna</th>
+                    <th class="m-type">Tipo de dato</th>
+                    <th class="m-description">Descripción</th>
+                    <th class="m-units">Unidad de medida</th>
+                    <th class="m-id">Identificador</th>
+                    <th class="m-specialType">Tipo de dato especial</th>
+                    <th class="m-specialTypeDetail">Detalle de tipo especial</th>
+                </tr>
+            </thead>
+            <tbody id="metadata-body">
+            {% for attribute_group in attributes %}
+                {% set api_uri = h.get_series_url_for_field(attribute_group) %}
+                <tr>
+                    <td class="m-title">{{ attribute_group.get('title', '') }}&nbsp;</td>
+                    <td class="m-type">
+                        {% set attribute_type = attribute_group.get('type', '') %}
+                        {% if attribute_type %}
+                            {{ h.field_types(attribute_type)[1] }}
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                    </td>
+                    <td class="m-description">{{ attribute_group.get('description', '') }}&nbsp;</td>
+                    <td class="m-units">{{ attribute_group.get('units', '') }}&nbsp;</td>
+                    <td class="m-id">{% if api_uri %}<a class="m-id" href="{{ api_uri }}" target="_blank">{% endif %}{{ attribute_group.get('id', '') }}{% if api_uri %}</a>{% endif %}&nbsp;</td>
+                    <td class="m-specialType">
+                        {% set special_type = attribute_group.get('specialType', '') %}
+                        {% if special_type %}
+                            {{ h.special_field_types(special_type)[1] }}
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                    </td>
+                    <td class="m-specialTypeDetail">
+                        {% set special_type_detail = attribute_group.get('specialTypeDetail', '') %}
+                        {% if special_type_detail %}
+                            {{ h.update_frequencies(special_type_detail)[1] }}
+                        {% else %}
+                            &nbsp;
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+{% endif %}

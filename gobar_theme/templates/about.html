@@ -1,0 +1,26 @@
+{% extends h.get_andino_base_page() %}
+
+{% block subtitle %} - Acerca{% endblock %}
+
+{% block content %}
+
+    <div id="about-container" class="container-fluid gobar-static-container">
+        <div class="restricted-max-width">
+            <div id="about" class="col-xs-12 col-md-10 col-md-offset-1 gobar-static">
+                <div id="pkg-path">
+                    {% set title = h.get_theme_config('title.site-title') %}
+                    <a href="{{ h.url_for(controller='package', action='search') }}">{{ title if title else '' }}</a> / Acerca
+                </div>
+
+
+                {% set title = h.get_theme_config('about.title') %}
+                <h2>{{ title if title else '' }}</h2>
+
+                {%- set description = h.get_theme_config('about.description') -%}
+                {% if description %}
+                    {{ h.convert_plain_string_into_markdown(description)|safe }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

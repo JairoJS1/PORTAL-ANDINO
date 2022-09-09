@@ -1,0 +1,177 @@
+<div id="pkg-secondary-info" class="col-xs-12 col-md-4">
+    <h2 class="secondary-info-title">Información adicional</h2>
+
+    <div id="info-container">
+
+        {% set dataset_url = h.url_for(controller='package', action='search') %}
+
+        {% if pkg.groups and pkg.groups|length > 0 %}
+            <div class="row group-row">
+                <div class="col-xs-5 title">
+                    Temas
+                </div>
+                <div class="col-xs-7 value">
+                    {%- set show_group_imgs = h.get_theme_config('groups.imgs') != 'hide-icons' -%}
+                    {%- for group in pkg.groups %}
+                        <div class="group-img-container">
+                            <a href="{{ h.add_url_param(new_params={'groups': group.name}, alternative_url=dataset_url) }}">
+                                {%- if show_group_imgs -%}
+                                    {%- if group.image_display_url and group.image_display_url|length > 0 -%}
+                                        <img src="{{ h.cut_img_path(group.image_display_url) }}"
+                                             data-title="{{ group.title }}"
+                                             class="group-image" data-replace="svg">
+                                    {%- endif -%}
+                                {%- else -%}
+                                    <span class="label group">{{ group.title }}</span>
+                                {%- endif -%}
+                            </a>
+                        </div>
+                    {%- endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if pkg.tags and pkg.tags|length > 0 %}
+            <div class="row">
+                <div class="col-xs-5 title">
+                    Etiquetas
+                </div>
+                <div class="col-xs-7 value">
+                    {% for tag in pkg.tags %}
+                        <p class="pkg-tag {{ 'hidden not-default-visible' if loop.index > 5 }}">
+                            <a href="{{ h.add_url_param(new_params={'tags': tag.name}, alternative_url=dataset_url) }}">
+                                {{ tag.name }}
+                            </a>
+                        </p>
+                    {% endfor %}
+
+                    {% if pkg.tags|length > 5 %}
+                        <p class="toggle-tags show-more-tags">
+                            Mostrar más
+                        </p>
+                        <p class="toggle-tags show-fewer-tags hidden">
+                            Mostrar menos
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="row">
+            <div class="col-xs-5 title">
+                Licencia
+            </div>
+            <div class="col-xs-7 value">
+                {{ h.get_license_title(pkg.license_id) }}
+            </div>
+        </div>
+
+        {% if pkg.extras %}
+            {% for extra in pkg.extras %}
+                {% if extra.key in ('accrualPeriodicity', 'updateFrequency') and extra.value and extra.value|length > 0 %}
+                    <div class="row">
+                        <div class="col-xs-5 title">
+                            Frecuencia de actualización
+                        </div>
+                        <div class="col-xs-7 value">
+                            <p>{{ h.update_frequencies(extra.value)[1] }}</p>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %}
+
+        {% if pkg.maintainer and pkg.maintainer|length > 0 %}
+            <div class="row">
+                <div class="col-xs-5 title">
+                    Mantenedor
+                </div>
+                <div class="col-xs-7 value">
+                    <p class="pkg-maintainer">
+                        {{ pkg.maintainer }}
+                        {% if pkg.maintainer_email %}
+                            <a href="mailto:{{ pkg.maintainer_email }}">
+                                {% snippet "svg/mail.svg" %}
+                            </a>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        {% endif %}
+
+        {% set creation_date =  h.get_extra_value(pkg.extras, 'issued') or h.get_extra_value(pkg.extras, 'Publicado') or pkg.metadata_created %}
+        {% set modification_date =  h.get_extra_value(pkg.extras, 'modified') or h.get_extra_value(pkg.extras, 'Modificado') or pkg.metadata_modified %}
+
+        <div class="row">
+            <div class="row">
+                <div class="col-xs-5 title">
+                    Fecha de publicación
+                </div>
+                <div class="col-xs-7 value">
+                    <p>{{ h.render_ar_datetime(creation_date) }}</p>
+                </div>
+            </div>
+
+            <div>
+                <div class="col-xs-5 title">
+                    Fecha de actualización
+                </div>
+                <div class="col-xs-7 value">
+                    <p>{{ h.render_ar_datetime(modification_date) }}</p>
+                </div>
+            </div>
+        </div>
+
+        {% if pkg.url %}
+            <div class="row">
+                <div class="col-xs-5 title">
+                    Página de referencia
+                </div>
+                <div class="col-xs-7 value">
+                    {{ pkg.url|urlize }}
+                </div>
+            </div>
+        {% endif %}
+
+        {% set documentation_url = h.get_pkg_extra(pkg, 'Documentación') %}
+        {% if documentation_url and documentation_url.strip()|length > 0 %}
+            <div class="row">
+            <div class="col-xs-5 title">
+                Documentación
+            </div>
+            <div class="col-xs-7 value">
+                {{ documentation_url.strip()|urlize }}
+            </div>
+        </div>
+        {% endif %}
+
+        {% set source_url = h.get_pkg_extra(pkg, 'source') %}
+        {% if source_url and source_url.strip()|length > 0 %}
+            <div class="row">
+            <div class="col-xs-5 title">
+                Fuente primaria
+            </div>
+            <div class="col-xs-7 value">
+                {{ source_url.strip()|urlize }}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div id="pkg-recent-activity">
+        <h2 class="recent-activity-title">Actividad reciente</h2>
+        {% set activity = h.get_action('package_activity_list_html', {'id': pkg.id, 'limit': 500}) %}
+        {{ activity }}
+        <p class="activity-read-more">
+            {{ h.snippet('svg/flecha_abajo.svg') }}
+            Mostrar más
+            {{ h.snippet('svg/flecha_abajo.svg') }}
+        </p>
+
+        <p class="activity-loading hidden">Cargando</p>
+        <hr class="final-separator">
+    </div>
+</div>
+
+{% resource 'gobar_js/package/tags.js' %}
+{% resource 'gobar_js/package/activity.js' %}

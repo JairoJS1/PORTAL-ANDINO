@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+<!-- TODO: buscar mejor forma de deshabilitar estos mensajes -->
+{% set messages = h.flash.pop_messages() %}
+
+{%- block page -%}
+
+    {% set background_config = h.get_from_config_file('andino.background_opacity') %}
+    <style type="text/css">
+        {{ 'div.background-overlay{background-color:rgba(0,0,0,' + background_config + ')!important;}' if background_config is not none }}
+    </style>
+
+    <div class="footer-down">
+        {%- block header %}
+            {% include "header.html" %}
+        {% endblock -%}
+
+        {%- block content %}
+        {% endblock -%}
+
+
+        {%- block footer %}
+            {% include "footer.html" %}
+
+            {% if h.get_theme_config('google_dataset_search.enable_structured_data') and pkg and h.helper_available('structured_data') %}
+            <script type="application/ld+json">
+            {{ h.structured_data(pkg.id)|safe }}
+            </script>
+            {% endif %}
+        {% endblock -%}
+    </div>
+{%- endblock -%}
+
+{%- block scripts %}
+    {% resource 'base/main' %}
+    {% resource 'base/ckan' %}
+    {% if g.tracking_enabled %}
+        {% resource 'base/tracking.js' %}
+    {% endif %}
+    {% resource 'gobar_js/libs/bootstrap_scripts.js' %}
+    {% resource 'gobar_js/libs/BootstrapMenu.js' %}
+    {% resource 'gobar_js/console_message.js' %}
+    {% resource 'gobar_js/replace_svg.js' %}
+    {% resource 'gobar_js/forms/custom_popup.js' %}
+    {% resource 'gobar_js/header.js' %}
+    {% resource 'gobar_js/libs/clamp.js' %}
+    {{ super() }}
+{% endblock -%}

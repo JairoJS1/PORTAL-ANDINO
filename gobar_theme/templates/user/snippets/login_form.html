@@ -1,0 +1,38 @@
+{% import 'macros/form.html' as form %}
+
+{% set username_error = true if error_summary %}
+{% set password_error = true if error_summary %}
+
+<form action="{{ action }}" method="post" class="form-horizontal">
+  {{ form.errors(errors=error_summary) }}
+
+  {{ form.input('login', label='Usuario', id='field-login', value="", error=username_error) }}
+
+  {{ form.input('password', label='Contraseña', id='field-password', type="password", value="", error=password_error) }}
+
+  {% if login_error %}
+    <p class="error">
+    No encontramos ningún usuario con esa combinación de usuario y contraseña.
+    {% if h.is_plugin_present('security') %}
+       A los {{ h.search_for_value_in_config_file('ckanext.security.login_max_count') }} intentos fallidos se bloqueará la cuenta.
+    {% endif %}
+    </p>
+  {% endif %}
+
+  <div class="login-password-box">
+      <div class="login-remember">
+          {{ form.checkbox('remember', label='Recordarme', id='field-remember', checked=true, value="63072000") }}
+      </div>
+      <div class="password-reset">
+          <a href="#" id="password-reset-show-modal">Olvidé mi contraseña</a>
+      </div>
+  </div>
+
+  <div class="form-actions login-submit-box">
+    {% block login_button %}
+        <button type="submit">INGRESAR</button>
+    {% endblock %}
+  </div>
+
+
+</form>

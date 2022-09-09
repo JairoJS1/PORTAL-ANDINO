@@ -1,0 +1,41 @@
+<div id="pkg-main-info" class="col-xs-12 col-md-8">
+    <div id="pkg-path">
+        {% set title = h.get_theme_config('title.site-title') %}
+        <a href="{{ h.url_for(controller='package', action='search') }}">{{ title if title else '' }}</a> / Dataset
+    </div>
+    <div id="pkg-title-and-desc">
+        {% if h.check_access('package_update', {'id':pkg.id }) %}
+            {% link_for 'EDITAR DATASET', controller='package', action='edit', id=pkg.name, class_='btn btn-blue edit-button' %}
+        {% endif %}
+        <h1 class="pkg-title">{{ pkg.title }}</h1>
+
+        <p class="pkg-author">
+            {{ pkg.author }}
+            {% if pkg.author_email %}
+                <a href="mailto:{{ pkg.author_email }}">
+                    {% snippet "svg/mail.svg" %}
+                </a>
+            {% endif %}
+        </p>
+        {% if h.check_access('package_update', {'id':pkg.id }) %}
+            {% link_for 'AGREGAR RECURSO', controller='package', action='new_resource', id=pkg.name, class_='btn btn-blue edit-button' %}
+        {% endif %}
+
+        <p class="pkg-notes">{{ pkg.notes }}</p>
+
+        <h2 class="pkg-resources-title">Recursos del dataset</h2>
+    </div>
+
+    <div id="pkg-resources">
+        {% for resource in pkg.resources %}
+            {% if resource.format == "" or resource.format|lower not in h.accepted_mime_types() %}
+                {% set format = "otro" %}
+            {% else %}
+                {% set format = resource.format %}
+            {% endif %}
+            {% snippet "package/snippets/dataset_resource_item.html", pkg=pkg, resource=resource, format=format %}
+        {% endfor %}
+
+    </div>
+
+</div>

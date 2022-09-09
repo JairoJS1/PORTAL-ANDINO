@@ -1,0 +1,16 @@
+<div class="filters-container col-md-4">
+    <div class="hidden-md hidden-lg hide-filters-button">
+        <i class="icon-chevron-left"></i>
+    </div>
+
+    {%- set group_imgs = h.get_theme_config('groups.imgs') -%}
+
+    {%- if group_imgs == 'hide-icons' -%}
+        {{ h.snippet('package/snippets/search_facets.html', title='Temas', name='groups') }}
+    {%- else -%}
+        {{ h.snippet('package/snippets/search_facets_groups.html', title='Temas', name='groups') }}
+    {%- endif -%}
+    {{ h.snippet('package/snippets/search_facets_organizations.html', title='Organizaciones', name='organization') }}
+    {{ h.snippet('package/snippets/search_facets.html', title='Etiquetas', name='tags') }}
+    <a class="close no-text hide-filters"><i class="icon-remove-sign"></i><span class="text">close</span></a>
+</div>

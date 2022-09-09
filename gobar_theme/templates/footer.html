@@ -1,0 +1,103 @@
+<div id="footer" class="container-fluid">
+    <div class="restricted-max-width">
+        <div id="footer-spacer" class="col-xs-10 col-xs-offset-1">
+            <div class="footer-section logo col-xs-12 col-sm-6 col-md-6">
+                <p>
+                    {% set tw = h.get_theme_config('social.tw') %}
+                    {% set has_tw = tw and tw|length > 0 %}
+                    {% if has_tw %}
+                        <a href="{{ tw }}" target="_blank" class="social-link">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+
+                    {% set fb = h.get_theme_config('social.fb') %}
+                    {% set has_fb = fb and fb|length > 0 %}
+                    {% if has_fb %}
+                        <a href="{{ fb }}" target="_blank" class="social-link">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+
+                    {% set github = h.get_theme_config('social.github') %}
+                    {% set has_github = github and github|length > 0 %}
+                    {% if has_github %}
+                        <a href="{{ github }}" target="_blank" class="social-link">
+                            <i class="fa fa-github-alt" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+
+                    {% set inst = h.get_theme_config('social.inst') %}
+                    {% set has_inst = inst and inst|length > 0 %}
+                    {% if has_inst %}
+                        <a href="{{ inst }}" target="_blank" class="social-link">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+
+                    {% set yt = h.get_theme_config('social.yt') %}
+                    {% set has_yt = yt and yt|length > 0 %}
+                    {% if has_yt %}
+                        <a href="{{ yt }}" target="_blank" class="social-link">
+                            <i class="fa fa-youtube-play" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+
+                    {% set linkedin = h.get_theme_config('social.linkedin') %}
+                    {% set has_linkedin = linkedin and linkedin|length > 0 %}
+                    {% if has_linkedin %}
+                        <a href="{{ linkedin }}" target="_blank" class="social-link">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+
+                    {% set blog = h.get_theme_config('social.blog') %}
+                    {% set has_blog = blog and blog|length > 0 %}
+                    {% if has_blog %}
+                        <a href="{{ blog }}" target="_blank" class="social-link">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>
+                    {% endif %}
+
+                    {% if c.userobj and c.userobj.sysadmin and (has_tw or has_github or has_fb or has_inst or has_yt or has_linkedin or has_blog) and c.controller != 'ckanext.gobar_theme.config_controller:GobArConfigController' %}
+                        <a class="edit-social-link"
+                           href="{{ h.url_for(controller='ckanext.gobar_theme.config_controller:GobArConfigController', action='edit_social') }}">
+                            {% snippet "svg/edit.svg" %}
+                        </a>
+                    {% endif %}
+                </p>
+                <div class="logo-edit-container">
+                    {% set url = h.get_theme_config('footer.url') %}
+                    {% set image = h.get_theme_config('footer.image') %}
+                    <a href="{{ url if url else 'http://datos.gob.ar/' }}" target="_blank">
+                        <img src="{{ image if image else '/img/logo_ministerio_color.png' }}" alt="{{ url if url else 'http://datos.gob.ar/' }}" class="logo-ministerio">
+                    </a>
+                    {% if c.userobj and c.userobj.sysadmin and c.controller != 'ckanext.gobar_theme.config_controller:GobArConfigController' %}
+                        <a class="edit-logo-link"
+                           href="{{ h.url_for(controller='ckanext.gobar_theme.config_controller:GobArConfigController', action='edit_footer') }}">
+                            {% snippet "svg/edit.svg" %}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="footer-section links-internos hidden-xs hidden-sm col-md-3">
+                {% set footer_sections = h.get_theme_config('about.sections', []) %}
+                {% for section in footer_sections %}
+                    <p><a href="{{ h.url('section', title_or_slug=section.title) }}">{{ section.title }}</a></p>
+               {% endfor %}
+            </div>
+            <div class="footer-section links-externos col-xs-12 col-sm-6 col-md-3">
+                {% set mail = h.get_theme_config('social.mail') %}
+                {% if mail and mail|length > 0 %}
+                    <p><a href="mailto:{{ mail }}">Contactanos</a></p>
+                {% endif %}
+                <p class="ckan-link">
+                    Desarrollado por<br><a href="https://github.com/datosgobar/distribuible.datos.gob.ar" target="_blank">UMG</a> con <a href="http://ckan.org/" target="_blank"><span class="ckan-name">CKAN</span></a>
+                </p>
+                <p class="ckan-link">
+                    UMG Jairo: {{ h.portal_andino_version() or "Desarrollo" }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

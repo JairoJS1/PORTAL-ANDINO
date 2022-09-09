@@ -1,0 +1,41 @@
+{% extends h.get_andino_base_page() %}
+
+{% set pkg = c.pkg_dict or pkg_dict %}
+{% set logged_in = true if c.userobj else false %}
+{% set res = c.resource %}
+{% set referer_url = request.headers.Referer %}
+{% set back_url = h.url_for(controller='package', action='resource_read', id=pkg.name, resource_id=res.id) if res.id else h.url_for(controller='package', action='read', id=pkg.name) %}
+
+{% block content %}
+    <div id="edit-package-container" class="container-fluid">
+        <div class="restricted-max-width">
+            <div id="edit-package" class="col-xs-12 col-md-10 col-md-offset-1">
+                <div class="col-xs-12 col-md-10 col-md-offset-1">
+                    <div class="back-btn">
+                        <a href={{ back_url }}>
+                            <i class="icon-chevron-left"></i>
+                            VOLVER
+                        </a>
+                    </div>
+                    <h1>
+                        {% if res %}
+                            {{ res.name }}.{{ res.format.lower() }}
+                        {% else %}
+                            Agregar recurso
+                        {% endif %}
+                    </h1>
+
+                    {% block form %}{% endblock %}
+
+                    {% block main_content %}
+                    {% endblock %}
+
+                    {% block scripts %}
+                        {{ super() }}
+                        {% resource 'vendor/fileupload' %}
+                    {% endblock %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

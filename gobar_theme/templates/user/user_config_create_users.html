@@ -1,0 +1,111 @@
+{% extends "user/user_config_base.html" %}
+
+{% block config %}
+    <div id="user-config-create-users">
+        {% import 'user/snippets/organization_selector.html' as organization_selector %}
+
+        <h1>Crear usuarios</h1>
+
+        {% set user_type = "Administrador" %}
+        {% set description = "Podrá crear usuarios, editar la configuración general de del portal; crear, actualizar
+        y borrar todos los conjuntos de datos; y gestionar temas y organizaciones." %}
+        {% snippet "user/snippets/create_form.html", user_type=user_type, description=description, organization_selector=organization_selector %}
+
+        <hr class="before-list">
+
+        {% set user_type = "Colaborador" %}
+        {% set description = "Podrá crear, actualizar y borrar conjuntos de datos sólo de la organización que elijas." %}
+        {% snippet "user/snippets/create_form.html", user_type=user_type, description=description, organization_selector=organization_selector %}
+
+        <hr class="before-list">
+
+        <div class="user-list admin-users">
+            <h2 class="blue user-list-title">Administradores</h2>
+            <div class="users">
+                {% for admin_user in admin_users %}
+                    {% set is_not_default_admin = admin_user.name != 'default' %}
+                    <div class="user">
+                        <div class="user-editable">
+                            {% snippet "svg/user-logo.svg" %}
+                            <p class="username">
+                                {{ admin_user.name }}
+                                {% if is_not_default_admin %}{% snippet "svg/edit.svg" %}{% endif %}
+                            </p>
+                            <p class="fullname">
+                                {{ admin_user.fullname or '' }}
+                            </p>
+                            <p class="email">
+                                {{ admin_user.email or '' }}
+                            </p>
+                        </div>
+                        {% if is_not_default_admin %}
+                            {% snippet "user/snippets/edit_form.html", user=admin_user, organizations_tree=organizations_tree, organization_selector=organization_selector, organizations_and_users=organizations_and_users %}
+                        {% endif %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        {% if normal_users|length > 0 %}
+            <div class="user-list normal-users">
+                <h2 class="blue user-list-title">Colaboradores</h2>
+                <div class="users">
+                    {% for normal_user in normal_users %}
+                        <div class="user">
+                            <div class="user-editable">
+                                {% snippet "svg/user-logo.svg" %}
+                                <p class="username">
+                                    {{ normal_user.name }}
+                                    {% snippet "svg/edit.svg" %}
+                                </p>
+                                <p class="fullname">
+                                    {{ normal_user.fullname or '' }}
+                                </p>
+                                <p class="email">
+                                    {{ normal_user.email or '' }}
+                                </p>
+                            </div>
+                            {% snippet "user/snippets/edit_form.html", user=normal_user, organizations_tree=organizations_tree, organization_selector=organization_selector, organizations_and_users=organizations_and_users %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% if orphan_users|length > 0 %}
+            <hr>
+            <h2 class="blue user-list-title orphan-list-title">Colaboradores sin organizaciones asociadas</h2>
+            <p class="orphan-list-description">
+                Estos usuarios ya no tienen permisos para crear, actualizar y borrar conjuntos de datos. Podés asociarlos a nuevas organizaciones o borrarlos.
+            </p>
+            <div class="user-list orphan-users">
+                <div class="users">
+                    {% for orphan_user in orphan_users %}
+                        <div class="user">
+                            <div class="user-editable">
+                                {% snippet "svg/user-logo.svg" %}
+                                <p class="username">
+                                    {{ orphan_user.name }}
+                                    {% snippet "svg/edit.svg" %}
+                                </p>
+                                <p class="fullname">
+                                    {{ orphan_user.fullname or '' }}
+                                </p>
+                                <p class="email">
+                                    {{ orphan_user.email or '' }}
+                                </p>
+                            </div>
+                            {% snippet "user/snippets/edit_form.html", user=orphan_user, organizations_tree=organizations_tree, organization_selector=organization_selector, organizations_and_users=organizations_and_users %}
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+    {% snippet 'snippets/csrf.html' %}
+    {% resource 'gobar_js/commons.js' %}
+    {% resource 'gobar_js/user/secure_password.js' %}
+    {% resource 'gobar_js/user_config/create_users.js' %}
+    {% resource 'gobar_js/user_config/multiple-select.js' %}
+{% endblock %}

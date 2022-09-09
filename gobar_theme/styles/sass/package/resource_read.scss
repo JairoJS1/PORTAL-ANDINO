@@ -1,0 +1,174 @@
+.resource-container {
+  @include base-container();
+  height: 100%;
+  display: table-row;
+  .resource {
+    height: 100%;
+    color: $grey-300;
+    @include base-content();
+    padding-bottom: 50px;
+    padding-left: 15px;
+    padding-right: 15px;
+    @include breakpoint-md {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+
+    .back-to-pkg {
+      padding: 0;
+      a.back-link {
+        color: $grey-400;
+        font-weight: 500;
+      }
+      a.edit-resource {
+        color: white;
+        float: right;
+      }
+    }
+
+    .title {
+      $top-space: 20px;
+      $download-size: 50px;
+      padding-left: 0;
+      padding-right: $download-size + 70px;
+      margin-bottom: 15px;
+      h1 {
+        color: $blue-300;
+        margin: $top-space 0 0 0;
+        font-size: 26px;
+        overfloe: hidden;
+        text-overflow: ellipsis;
+      }
+      p {
+        font-size: 18px;
+      }
+      button {
+        background: $blue-300;
+        border: none;
+        @include border-radius(4px);
+        color: white;
+        padding: 4px 8px;
+        font-weight: 400;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        margin-top: -15px;
+        &:hover {
+          background: $blue-200;
+        }
+      }
+    }
+
+    .resource-alternative-packages {
+      padding-left: 0;
+      padding-right: 0;
+      @include breakpoint-md {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      border-bottom: solid 1px $grey-300;
+      padding-bottom: 20px;
+
+      h2 {
+        color: $grey-500;
+        border-bottom: solid 1px $grey-300;
+        font-size: 20px;
+        font-weight: 400;
+      }
+    }
+    .resource-attributes {
+        margin-top: 20px;
+        h2 {
+            color: $blue-300;
+            margin: 0 0 20px 0;
+        }
+        table {
+            table-layout: fixed;
+            border-collapse: collapse;
+            width: 100%;
+            colgroup {
+                .col-attribute {
+                    width: 120px;
+                }
+            }
+            thead {
+                tr {
+                    background: $blue-300;
+                    color: white;
+                    th {
+                        font-weight: 500;
+                        padding: 10px;
+                        text-align: left;
+                        border-left: solid 1px white;
+                        border-right: solid 1px white;
+                        &:last-child,
+                        &:first-child {
+                            border: none;
+                        }
+                    }
+                }
+            }
+
+            tbody {
+                color: $grey-400;
+                tr {
+                    border-bottom: 1px solid $grey-200;
+                    border-top: 1px solid $grey-200;
+                    &:nth-child(even) {
+                    }
+                    &:last-child {
+                        border-bottom: solid 5px $blue-300;
+                    }
+
+                    td {
+                        padding: 10px;
+                        text-align: left;
+                        font-weight: 400;
+                        border-right: 1px solid $grey-200;
+                        border-left: 1px solid $grey-200;
+                        &:first-child,
+                        &:last-child {
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .resource-additional-info {
+      padding-left: 0;
+      padding-right: 0;
+      @include breakpoint-md {
+        padding-left: 15px;
+        padding-right: 15px;
+      }
+      h2 {
+        padding-top: 2px;
+        font-size: 19px;
+        font-weight: 400;
+        border-bottom: solid 1px $grey-300;
+        color: $blue-300;
+        margin-bottom: 0;
+      }
+      .resource-additional {
+        padding: 15px 5px;
+        font-size: 16px;
+        border-bottom: solid 1px $grey-300;
+        &:last-child {
+          border-bottom: solid 1px $grey-300;
+        }
+        .key {
+          padding: 0;
+          font-weight: 500;
+        }
+        .value {
+          padding: 0;
+          span.label {
+            font-size: 14px;
+            @include labelsFormatColors();
+          }
+        }
+      }
+    }
+  }
+}

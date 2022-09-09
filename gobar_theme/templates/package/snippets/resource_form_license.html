@@ -1,0 +1,18 @@
+<div class="control-group form-licence" id="form-license">
+    <label class="control-label" for="field-license">Licencia</label>
+    <p>
+        Esta licencia aplica para los contenidos del recurso. Cuando publiques, aceptarás liberar los metadatos del
+        formulario bajo la <a href="http://opendatacommons.org/licenses/odbl/1-0/" target="_blank">licencia Open
+        Database</a>. Encontrá <a href="http://opendefinition.org/" target="_blank">más información sobre licencias
+        en Open Definition</a>.
+    </p>
+    <div class="controls">
+        <select id="field-license" name="license_id" data-module="autocomplete">
+            {% set existing_license_id = data.get('license_id') %}
+            {% for license in h.license_options(existing_license_id) %}
+                <option value="{{ license.id }}" {{ 'selected' if h.id_belongs_to_license(existing_license_id, license) or ("CC-BY-4.0" == license.id and not existing_license_id) }}>{{ license.title }}</option>
+            {% endfor %}
+        </select>
+        {% if error %}<span class="error-block">{{ error }}</span>{% endif %}
+    </div>
+</div>

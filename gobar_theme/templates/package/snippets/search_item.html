@@ -1,0 +1,46 @@
+{%- set truncate_maintainer = 150 -%}
+{%- set truncate_description = 250 -%}
+{%- set title = package.title or package.name -%}
+{%- set notes = h.markdown_extract(package.notes, extract_length=truncate) -%}
+
+<a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="dataset-item">
+    <div class="dataset-container">
+        <div class="dataset-border container-fluid">
+            <div class="restricted-max-width">
+                <div class="dataset-content col-xs-9">
+                    <h3 class="dataset-title">{{ title }}</h3>
+
+                    <div class="dataset-author">{{ h.cut_text(package.author, 150) }}</div>
+                    <div class="dataset-notes">{{ h.cut_text(notes, 190) }}</div>
+                </div>
+                <div class="dataset-groups-and-resources col-xs-3">
+                    {%- if show_group_imgs -%}
+                        <div class="dataset-groups">
+                            {%- for group in package.groups -%}
+                                {%- if group.id in groups_with_img_path and groups_with_img_path[group.id]|length > 0 -%}
+                                    <img src="{{ h.cut_img_path(groups_with_img_path[group.id]) }}" title="{{ group.title }}" class="group-image">
+                                {%- endif -%}
+                            {%- endfor -%}
+                        </div>
+                    {%- endif -%}
+                    <div class="dataset-resources">
+                        {%- if not show_group_imgs -%}
+                            {%- for group in package.groups -%}
+                                <span class="label group">{{ group.title }}</span>
+                            {%- endfor %}
+                        {%- endif -%}
+                        {%- for original_format in h.dict_list_reduce(package.resources, 'format') -%}
+                            {% if original_format == "" or original_format|lower not in h.accepted_mime_types() %}
+                                {% set display_format = "otro" %}
+                            {% else %}
+                                {% set display_format = original_format %}
+                            {% endif %}
+                            <span class="label" data-format="{{ display_format.lower() }}">{{ display_format.lower() }}</span>
+                        {%- endfor -%}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</a>
