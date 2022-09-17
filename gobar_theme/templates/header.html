@@ -67,10 +67,13 @@
                     <hr>
             
                     {%- endif -%}
-            
+                    
+                    {%- if c.userobj -%}
                     <div class="navbar-link dropdown-navbar-link">
                         <span class="username">{{ c.userobj.name }}</span> {% snippet "svg/user-logo.svg" %}
                     </div>
+                    {%- endif -%}
+
                     <div class="dropdown-navbar hidden">
                         <div class="navbar-link">
                             <a
@@ -180,7 +183,7 @@
                 {%- endif -%}
                 
                 {%- if c.action != 'login' and not c.userobj -%}
-                    <a class="header-link" href="{{ h.url('ingresar') }}">Ingresar</a>
+                <a class="header-link" href="{{ h.url('ingresar') }}">Ingresar</a>                
                 {%- endif -%}
             </div>
         </div>

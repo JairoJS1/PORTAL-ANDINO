@@ -16,34 +16,34 @@ $(document).ready(function () {
         url: '/spatial/paises',
     }).done(function(data) {
         var select = $("#country-field");
-        var currentValue = select.val();
+        var currentValue = "GTM";
 
         toggleSpatialSelects(currentValue);
 
-        var countries = {};
+        // var countries = {};
 
-        countries.results = $.map(data.paises, function (obj) {
-            obj.id = obj.id || obj.code;
-            obj.text = obj.text || obj.common_name;
-            obj.selected = currentValue == obj.code
+        // countries.results = $.map(data.paises, function (obj) {
+        //     obj.id = obj.id || obj.code;
+        //     obj.text = obj.text || obj.common_name;
+        //     obj.selected = currentValue == obj.code
 
-            return obj;
-        });
+        //     return obj;
+        // });
+        
+        // select.select2({
+        //     placeholder: 'Seleccione un País',
+        //     allowClear: true,
+        //     data: countries
+        // });
 
-        select.select2({
-            placeholder: 'Seleccione un país',
-            allowClear: true,
-            data: countries
-        });
-
-        select.on('change', function(e) {
-            var countryCode = null;
-            if (e.added && e.added.id) {
-                countryCode = e.added.id;
-            }
-            $("#province-field").val('');
-            toggleSpatialSelects(countryCode);
-        });
+        // select.on('change', function(e) {
+        //     var countryCode = null;
+        //     if (e.added && e.added.id) {
+        //         countryCode = e.added.id;
+        //     }
+        //     $("#province-field").val('');
+        //     toggleSpatialSelects(countryCode);
+        // });
     });
 
     $.ajax({

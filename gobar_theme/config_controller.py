@@ -128,21 +128,6 @@ class GobArConfigController(base.BaseController):
 
         return base.render('config/config_05_social.html')
 
-    def edit_footer(self):
-        self._authorize()
-        if request.method == 'POST':
-            params = parse_params(request.params)
-            new_footer_params = {'url': self._url_with_protocol(params['url'].strip())}
-            if params['image-logic'] == 'new-image':
-                new_footer_params['image'] = self._save_img(params['background-image'])
-            elif params['image-logic'] == 'delete-image':
-                new_footer_params['image'] = None
-            else:
-                new_footer_params['image'] = self.get_theme_config('footer.image')
-            config_dict = self._read_config()
-            config_dict['footer'] = new_footer_params
-            self._set_config(config_dict)
-        return base.render('config/config_06_footer.html')
 
     def edit_datasets(self):
         self._authorize()
@@ -232,7 +217,7 @@ class GobArConfigController(base.BaseController):
                 'languages': languages,
                 'last_updated': moment.now().isoformat(),
                 'license': params['metadata-license'].strip(),
-                'country': params['metadata-country'].strip(),
+                'country': "GTM",
                 'province': params['metadata-province'].strip(),
                 'districts': params.get('metadata-municipio', []),
             }
