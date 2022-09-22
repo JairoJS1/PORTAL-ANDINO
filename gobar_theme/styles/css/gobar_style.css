@@ -6471,8 +6471,7 @@ div.svg-tooltip {
       height: 50px;
       vertical-align: top; }
     #header #header-spacing .logo-header .logo-ministerio {
-      height: 50px;
-      max-width: 100%;
+      max-width: 50%;
       display: block; }
 
 .footer-down {
@@ -6998,7 +6997,9 @@ div#background-container {
   background-image: linear-gradient(to right,#00b9f1, #0072bc);
   background-size: cover;
   background-position: center center;
-  background-image: url("/img/BANDERA.png"); 
+  background-image: url("/img/logo_muni.png"); 
+  background-repeat: no-repeat;
+  background-size: 350px 350px;
   padding: 0; }
   #title .background-overlay {
     padding: 20px 0;
@@ -10485,3 +10486,30 @@ div#test-mail > img.feedback-img {
 form#organization-confirm-delete-form > button:disabled {
   background-color: grey;
 }
+
+#TituloTema{
+  color: #1D73A5;
+  font-weight: 400;
+  font-size: 40px;
+  margin: 0 0 20px 0;
+}
+
+#imagen_tema{
+  min-width: 1vw;
+  height: 8vW;
+  margin: 0;
+  margin-left: -1vw;
+  padding: 0;
+  width: 50%;
+  position: relative;
+}
+
+#celda_tema{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  font-size: 1.2vw;
+  padding: 0;
+}
+

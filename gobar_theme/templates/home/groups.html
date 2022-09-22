@@ -4,6 +4,8 @@
             <!-- TODO: cuando no se muestran imagenes: mostrar igual que un boton y en disable con opacity en 0.65 -->
             {% set dataset_url = h.url_for(controller='package', action='search') %}
             {% set group_imgs = h.get_theme_config('groups.imgs') %}
+            <h1 id="TituloTema">Temas</h1>
+
             {%- for group in c.sorted_groups -%}
                 {%- set can_update = c.userobj and c.userobj.sysadmin -%}
                 <div class="group-container col-xs-12 col-sm-4 col-md-3 invisible {{ 'with-edit-button' if can_update else '' }}">
@@ -21,11 +23,11 @@
                     <div class="group {{ group_class }} {{ group_imgs if group_imgs else '' }}">
                         <div class="group-text">
                             {% if group_imgs == 'show-icons' and group.image_display_url|length > 0 %}
-                                <img src="{{ group.image_display_url }}" alt="" data-replace="svg">
+                                <img src="{{ group.image_display_url }}" alt="" data-replace="svg" id="imagen_tema">
                             {% endif %}
 
-                            <div class="group-table">
-                                <div class="group-cell">
+                            <div class="group-table" style="padding: 0; margin: 0;">
+                                <div class="group-cell" id="celda_tema">
                                     {{ group.display_name }}
                                 </div>
                             </div>
