@@ -2571,7 +2571,8 @@ select[multiple].input-lg, textarea.input-lg {
 .form-horizontal .checkbox, .form-horizontal .checkbox-inline, .form-horizontal .radio, .form-horizontal .radio-inline {
   padding-top: 7px;
   margin-top: 0;
-  margin-bottom: 0; }
+  margin-bottom: 0; 
+}
 
 .form-horizontal .checkbox, .form-horizontal .radio {
   min-height: 27px; }
@@ -6997,9 +6998,7 @@ div#background-container {
   background-image: linear-gradient(to right,#00b9f1, #0072bc);
   background-size: cover;
   background-position: center center;
-  background-image: url("/img/logo_muni.png"); 
-  background-repeat: no-repeat;
-  background-size: 350px 350px;
+  background-image: url("/img/Fondo.png"); 
   padding: 0; }
   #title .background-overlay {
     padding: 20px 0;
@@ -7458,7 +7457,13 @@ div#background-container {
   height: 100%;
   padding-right: 0;
   padding-left: 0;
-  display: table-row; }
+  display: table-row; 
+  background-image: url("/img/login.jpg");
+  width: 100%;
+  background-size: 100%;
+  background-position-y: 50%;
+  background-repeat: no-repeat;
+}
   @media (min-width: 992px) {
     #login-container {
       padding-right: 15px;
@@ -10513,3 +10518,7 @@ form#organization-confirm-delete-form > button:disabled {
   padding: 0;
 }
 
+.form-horizontal {
+  background-color: #fff;
+  opacity: 95%;
+}

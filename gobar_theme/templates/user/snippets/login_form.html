@@ -4,11 +4,12 @@
 {% set password_error = true if error_summary %}
 
 <form action="{{ action }}" method="post" class="form-horizontal">
+  <h4 class="login-access-text"><b>Bienvendio</b></h4>
   {{ form.errors(errors=error_summary) }}
 
-  {{ form.input('login', label='Usuario', id='field-login', value="", error=username_error) }}
+  {{ form.input(' ', placeholder="Usuario", id='field-login', value="", error=username_error) }}
 
-  {{ form.input('password', label='Contraseña', id='field-password', type="password", value="", error=password_error) }}
+  {{ form.input(' ', placeholder='Contraseña', id='field-password', type="password", value="", error=password_error) }}
 
   {% if login_error %}
     <p class="error">
@@ -30,7 +31,7 @@
 
   <div class="form-actions login-submit-box">
     {% block login_button %}
-        <button type="submit">INGRESAR</button>
+        <button type="submit" style="border-radius: 10px;">INGRESAR</button>
     {% endblock %}
   </div>
 
