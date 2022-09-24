@@ -122,7 +122,7 @@
             </div>
         </div>
 
-        {% if pkg.url %}
+       <!--  {% if pkg.url %}
             <div class="row">
                 <div class="col-xs-5 title">
                     Página de referencia
@@ -131,7 +131,7 @@
                     {{ pkg.url|urlize }}
                 </div>
             </div>
-        {% endif %}
+        {% endif %} -->
 
         {% set documentation_url = h.get_pkg_extra(pkg, 'Documentación') %}
         {% if documentation_url and documentation_url.strip()|length > 0 %}
