@@ -1,39 +1,51 @@
-{% import 'macros/form.html' as form %}
+{% import 'macros/form.html' as form %} {% set username_error = true if
+error_summary %} {% set password_error = true if error_summary %}
 
-{% set username_error = true if error_summary %}
-{% set password_error = true if error_summary %}
-
-<form action="{{ action }}" method="post" class="form-horizontal">
-  <h4 class="login-access-text"><b>Bienvendio</b></h4>
-  {{ form.errors(errors=error_summary) }}
-
-  {{ form.input(' ', placeholder="Usuario", id='field-login', value="", error=username_error) }}
-
-  {{ form.input(' ', placeholder='Contraseña', id='field-password', type="password", value="", error=password_error) }}
-
-  {% if login_error %}
+<form
+  action="{{ action }}"
+  method="post"
+  class="form-horizontal"
+  style="
+    background-image: url(/img/login2.png);
+    background-size: 100% 100%;
+    height: 40vw;
+    opacity: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 7vw;
+    background-color: rgba(0, 0, 0, 0);
+    border-style: none;
+  "
+>
+  <div id="data-login" style="width: 65%">
+    <h4 class="login-access-text"><b>Bienvenido</b></h4>
+    {{ form.errors(errors=error_summary) }} {{ form.input(' ',
+    placeholder="Usuario", id='field-login', value="", error=username_error) }}
+    {{ form.input(' ', placeholder='Contraseña', id='field-password',
+    type="password", value="", error=password_error) }} {% if login_error %}
     <p class="error">
-    No encontramos ningún usuario con esa combinación de usuario y contraseña.
-    {% if h.is_plugin_present('security') %}
-       A los {{ h.search_for_value_in_config_file('ckanext.security.login_max_count') }} intentos fallidos se bloqueará la cuenta.
-    {% endif %}
+      No encontramos ningún usuario con esa combinación de usuario y contraseña.
+      {% if h.is_plugin_present('security') %} A los {{
+      h.search_for_value_in_config_file('ckanext.security.login_max_count') }}
+      intentos fallidos se bloqueará la cuenta. {% endif %}
     </p>
-  {% endif %}
+    {% endif %}
 
-  <div class="login-password-box">
+    <div class="login-password-box">
       <div class="login-remember">
-          {{ form.checkbox('remember', label='Recordarme', id='field-remember', checked=true, value="63072000") }}
+        {{ form.checkbox('remember', label='Recordarme', id='field-remember',
+        checked=true, value="63072000") }}
       </div>
       <div class="password-reset">
-          <a href="#" id="password-reset-show-modal">Olvidé mi contraseña</a>
+        <a href="#" id="password-reset-show-modal">Olvidé mi contraseña</a>
       </div>
+    </div>
+
+    <div class="form-actions login-submit-box">
+      {% block login_button %}
+      <button type="submit" style="border-radius: 10px">INGRESAR</button>
+      {% endblock %}
+    </div>
   </div>
-
-  <div class="form-actions login-submit-box">
-    {% block login_button %}
-        <button type="submit" style="border-radius: 10px;">INGRESAR</button>
-    {% endblock %}
-  </div>
-
-
 </form>
