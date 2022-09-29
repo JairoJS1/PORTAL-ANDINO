@@ -4,9 +4,11 @@
         <a href="{{ h.url_for(controller='package', action='search') }}">{{ title if title else '' }}</a> / Dataset
     </div>
     <div id="pkg-title-and-desc">
+       
         {% if h.check_access('package_update', {'id':pkg.id }) %}
-            {% link_for 'EDITAR DATASET', controller='package', action='edit', id=pkg.name, class_='btn btn-blue edit-button' %}
-        {% endif %}
+       
+            {% link_for 'EDITAR DATASET', controller='package', action='edit', id=pkg.name, class_='btn btn-blue edit-button', src="/img/search.png" %} 
+        {% endif %} 
         <h1 class="pkg-title">{{ pkg.title }}</h1>
 
         <p class="pkg-author">

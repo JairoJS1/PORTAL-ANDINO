@@ -20,9 +20,9 @@ error_summary %} {% set password_error = true if error_summary %}
 >
   <div id="data-login" style="width: 65%">
     <h4 class="login-access-text"><b>Bienvenido</b></h4>
-    {{ form.errors(errors=error_summary) }} {{ form.input(' ',
+    {{ form.errors(errors=error_summary) }} {{ form.input('login',
     placeholder="Usuario", id='field-login', value="", error=username_error) }}
-    {{ form.input(' ', placeholder='Contraseña', id='field-password',
+    {{ form.input('password', placeholder='Contraseña', id='field-password',
     type="password", value="", error=password_error) }} {% if login_error %}
     <p class="error">
       No encontramos ningún usuario con esa combinación de usuario y contraseña.
