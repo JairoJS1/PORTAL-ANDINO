@@ -4,10 +4,11 @@
             <!-- TODO: cuando no se muestran imagenes: mostrar igual que un boton y en disable con opacity en 0.65 -->
             {% set dataset_url = h.url_for(controller='package', action='search') %}
             {% set group_imgs = h.get_theme_config('groups.imgs') %}
-            <h1 id="TituloTema">Temas</h1>
 
+       
             {%- for group in c.sorted_groups -%}
                 {%- set can_update = c.userobj and c.userobj.sysadmin -%}
+                <h1 id="TituloTema">Temas</h1> 
                 <div class="group-container col-xs-12 col-sm-4 col-md-3 invisible {{ 'with-edit-button' if can_update else '' }}">
                     {% if can_update %}
                         <a href="{{ h.url_for(controller='group', action='edit', id=group.name) }}">
