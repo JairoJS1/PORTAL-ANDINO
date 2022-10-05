@@ -4,71 +4,91 @@
 
 {% block content %}
 
-    {% snippet "organization/title.html" %}
+{% snippet "organization/title.html" %}
 
-    <div class="organization-container container-fluid">
-        <div class="restricted-max-width">
-            <div class="organization col-xs-12 col-md-10 col-md-offset-1">
-                {% if h.check_access('organization_create') %}
-                    <div class="add-organization">
-                        {% link_for 'CREAR ORGANIZACIÓN', controller='organization', action='new', class_='' %}
-                    </div>
-                {% endif %}
+<div class="organization-container container-fluid">
+    <div class="restricted-max-width">
+        <div class="organization col-xs-12 col-md-10 col-md-offset-1">
+            {% if h.check_access('organization_create') %}
+            <div class="add-organization">
+                {% link_for 'CREAR ORGANIZACIÓN', controller='organization',
+                action='new', class_='' %}
+            </div>
+            {% endif %}
 
-                <div class="organization-list">
-                    <div class="organization-list-title">
-                        <span>Organización</span>
-                        <span class="count-title">Datasets totales</span>
-                    </div>
-
-                    {% set organizations_tree = h.organizations_basic_info() %}
-                    {% set dataset_url = h.url_for(controller='package', action='search') %}
-
-                    {% for organization in organizations_tree recursive %}
-
-                        {% set top_organization = organization.depth == 0 %}
-
-
-                        <div class="organization-branch">
-
-                            <div class="organization-name {{ 'top-organization' if top_organization else '' }}">
-                                {%- if top_organization -%}
-                                    {%- snippet "svg/chevron_right.svg" -%}
-                                {%- endif -%}
-
-                                {%- if organization.total_package_count > 0 -%}
-                                    <a href="{{ h.add_url_param(new_params={'organization': organization.name}, alternative_url=dataset_url) }}">{{ organization.title|trim }} {{ ('(%d)' % organization.own_package_count) if organization.own_package_count }}</a>
-                                {%- else -%}{{ organization.title|trim }}{%- endif -%}
-
-                                {%- if c.userobj and c.userobj.sysadmin -%}
-                                    <a href="{{ h.url_for(controller='organization', action='edit', id=organization.name) }}">
-                                        <span class="edit-organization">
-                                            {% snippet "svg/edit.svg" %}
-                                        </span>
-                                    </a>
-                                {%- endif -%}
-
-                                {%- if top_organization -%}
-                                    <span class="organization-count">
-                                        {{ organization.total_package_count }}
-                                    </span>
-                                {%- endif -%}
-
-                            </div>
-
-                            {% if organization.children %}
-                                {{ loop(organization.children) }}
-                            {% endif %}
-
-                        </div>
-
-
-                        {% if top_organization %}
-                            <hr>
-                        {% endif %}
-                    {% endfor %}
+            <div class="organization-list">
+                <div class="organization-list-title">
+                    <span>Organización</span>
+                    <span class="count-title">Datasets totales</span>
                 </div>
+
+                {% set organizations_tree = h.organizations_basic_info() %}
+                {% set dataset_url = h.url_for(controller='package',
+                action='search') %}
+
+                {% for organization in organizations_tree recursive %}
+
+                {% set top_organization = organization.depth == 0 %}
+
+
+                <div class="organization-branch">
+
+                    <div class="organization-name {{ 'top-organization' if
+                        top_organization else '' }}">
+                        {%- if top_organization -%}
+                        {%- snippet "svg/chevron_right.svg" -%}
+                        {%- endif -%}
+
+                        {%- if organization.total_package_count > 0 -%}
+
+                        <div class="group-container col-xs-12 col-sm-4 col-md-3
+                            with-edit-button">
+                            <a href="{{
+                                h.add_url_param(new_params={'organization':
+                                organization.name}, alternative_url=dataset_url)
+                                }}">
+                                <div class="edit-container">
+                                    <svg fill="#000000" height="24" viewBox="0 0
+                                        24 24"
+                                        width="24"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        class="edit-svg">
+                                        <path d="M3 17.25V21h3.75L17.81
+                                            9.94l-3.75-3.75L3
+                                            17.25zM20.71 7.04c.39-.39.39-1.02
+                                            0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41
+                                            0l-1.83
+                                            1.83 3.75 3.75 1.83-1.83z"></path>
+                                    </svg>
+                                </div>
+                            </a>
+                            <div class="group-cell" id="celda_tema">
+                                {{ organization.title|trim }} {{ ('(%d)' %
+                organization.own_package_count) if
+                organization.own_package_count }}</a>
+            {%- else -%}{{ organization.title|trim }}{%- endif -%}
+            {%- if c.userobj and c.userobj.sysadmin -%}
+                            </div>
+                        </div>
+                        {%- endif -%}
+
+                        {%- if top_organization -%}
+                        <span class="organization-count">
+                            {{ organization.total_package_count }}
+                        </span>
+                        {%- endif -%}
+                    </div>
+                    {% if organization.children %}
+                    {{ loop(organization.children) }}
+                    {% endif %}
+
+                </div>
+                {% if top_organization %}
+                <hr>
+                {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
+</div>
 {% endblock %}
