@@ -11,7 +11,7 @@
           </div>
           {% endif %}
     
-          <div class="organization-list">
+          <div class="organization-list" >
             <div class="organization-list-title">
               <span>Organización</span>
               <span class="count-title">Datasets totales</span>
@@ -22,7 +22,8 @@
             organization in organizations_tree recursive %} {% set top_organization
             = organization.depth == 0 %}
     
-            <div class="organization-branch">
+            <div class="organization-branch " style="color: black; transition: 0.3s; box-shadow: 0
+            4px 8px 0 rgba(0,0,0,0.2) ;">
               <div
                 class="organization-name {{ 'top-organization' if top_organization else '' }}"
               >
@@ -62,12 +63,7 @@
             <hr />
             {% endif %} {% endfor %}
     
-            <div class="card">
-              <div class="container">
-                <h4><b>John Doe</b></h4>
-                <p>Architect & Engineer</p>
-              </div>
-            </div>
+          
           </div>
         </div>
       </div>
