@@ -49,13 +49,16 @@ label.checkbox {
     box-shadow: none;
   "
 >
-  <div id="data-login" style="width: 65%;line-height: 4vw;">
+  <div id="data-login" style="width: 65%;line-height: 4vw; margin-top: 4vw;">
     <h4 class="login-access-text" style=" line-height: 0;"><b style="font-size:2vw;margin-bottom: 1vw;">Bienvenido</b></h4>
    
-    {{ form.errors(errors=error_summary) }} {{ form.input('Usuario',
-    placeholder="Usuario", id='field-login', value="", error=username_error) }}
-    {{ form.input('Contraseña', placeholder='Contraseña', id='field-password',
-    type="password", value="", error=password_error) }} {% if login_error %}
+    {{ form.errors(errors=error_summary) }} 
+    
+    {{ form.input('login', placeholder="", id='field-login', value="", error=username_error) }}
+    
+    {{ form.input('password', placeholder='', id='field-password', type="password", value="", error=password_error) }} 
+    
+    {% if login_error %}
  
     <p class="error">
       No encontramos ningún usuario con esa combinación de usuario y contraseña.
