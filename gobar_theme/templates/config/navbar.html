@@ -34,7 +34,10 @@
            class="section-link {{ 'active' if c.action == 'edit_about' else '' }}">
             Acerca (opcional)
         </a>
-
+        <a href="{{ h.url_for(controller='ckanext.gobar_theme.config_controller:GobArConfigController', action='edit_apis') }}"
+           class="section-link {{ 'active' if c.action == 'edit_apis' else '' }}">
+            APIs
+        </a>
         {% if h.is_plugin_present('seriestiempoarexplorer') %}
         <a href="{{ h.url_for(controller='ckanext.gobar_theme.config_controller:GobArConfigController', action='edit_series') }}"
            class="section-link {{ 'active' if c.action == 'edit_series' else '' }}">
@@ -89,12 +92,4 @@
         </a>
     </div>
 
-    <div class="links-section guide-link">
-        <a class="inline"
-           href="https://datosgobar.github.io/portal-andino/quickstart/"
-           target="_blank">
-            <i class="icon-question-sign" aria-hidden="true"></i>
-            ¿Dudas? Tené a mano la <span class="blue">guía de uso</span>.
-        </a>
-    </div>
 </div>

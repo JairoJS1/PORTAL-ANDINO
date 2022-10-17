@@ -1,7 +1,7 @@
 <div
   id="footer"
   class="container-fluid"
-  style="background-size: 100% 100%"
+  style="background-size: 100% 100%;background-color: #f1efef;"
 >
   <div class="restricted-max-width">
     <div id="footer-spacer" class="col-xs-10 col-xs-offset-1">
@@ -68,7 +68,6 @@
               class="logo-ministerio"
               id="imagen-footer"
               style="
-                background-color: white;
                 opacity: 80%;
                 border-radius: 10px;
                 padding: 10px;
@@ -99,7 +98,7 @@
       <div
         class="footer-section links-externos col-xs-12 col-sm-6 col-md-3"
         id="datos-footer"
-        style="background-color: white; opacity: 80%; border-radius: 10px"
+        style="opacity: 80%; border-radius: 10px"
       >
         {% set mail = h.get_theme_config('social.mail') %} {% if mail and
         mail|length > 0 %}
