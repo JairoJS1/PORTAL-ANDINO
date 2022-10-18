@@ -60,7 +60,7 @@ def field_types(field_type_id=None):
 def distribution_types(distribution_type_id=None):
     types = [
         ("file", u"Archivo de datos"),
-   
+         ("api", u"API"),
         ("documentation", u"Documentación")
     ]
 
