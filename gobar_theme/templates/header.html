@@ -111,7 +111,7 @@
                     {%- if c.action != 'login' and not c.userobj -%}
 
                     <div class="navbar-link">
-                        <a class="header-link" href="{{h.url_for(controller='user', action='login')}}">INGRESAR</a>
+                        <a class="header-link" href="{{h.url('ingresar')}}">INGRESAR</a>
                     </div>
 
                     {%- endif -%}
@@ -166,7 +166,7 @@
                 {%- endif -%}
 
                 {%- if c.action != 'login' and not c.userobj -%}
-                <a class="header-link" href="{{h.url_for(controller='user', action='login')}}">Ingresar</a>
+                <a class="header-link" href="{{h.url('ingresar')}}">INGRESAR</a>
                 {%- endif -%}
             </div>
         </div>
